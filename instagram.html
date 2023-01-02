@@ -5,30 +5,74 @@
 	<meta http-eqiv="X-UA-compatible" content="IE=Rdge">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>instagram</title>
+	<link rel="stylesheet" href="instagram.css">
 </head>
-
-     <input id="name" type="text" placeholder="username or email">
-	 <input id="password" type="password" placeholder="password">
 <body>
    <script>
-      let div=document.createElement("div");
+   
+      var details=[
+	     {
+		    username:"saranya",
+			password:12345
+		 },
+		 {
+		    username:"saran",
+			password:123
+		 }
+	  ];
+   
+   
+      // create div
+	  let div= document.createElement("div");
 	  document.body.appendChild(div);
+	  div.setAttribute("class", "main")
+    
+	  // create form
+      let form=document.createElement("form");
+	  div.appendChild(form);
+	  form.setAttribute("class", "form");
+	  form.setAttribute("action", "./mainPage.html");
+	  form.setAttribute("onsubmit", "return(validation())");
 	  
+	  // create h1 tag for heading
 	  let h1=document.createElement("h1");
-	  div.appendChild(h1);
+	  form.appendChild(h1);
 	  h1.innerHTML="Instagram";
 	  h1.setAttribute("class", "insta");
 	  
-	  let password1=document.getElementById("name");
+	  // create input
+	  let input1=document.createElement("input");
+	  form.appendChild(input1);
+	  input1.setAttribute("class", "input1");
+	  input1.setAttribute("id", "in1");
+	  input1.setAttribute("placeholder", "username or email");
+	  input1.setAttribute("type", "text");
 	  
+	  let input2=document.createElement("input");
+	  form.appendChild(input2);
+	  input2.setAttribute("class", "input2");
+	  input2.setAttribute("id", "in2");
+	  input2.setAttribute("placeholder", "password");
+	  input2.setAttribute("type", "password");
 	  
-	  
-	  
+	  // create button but input
+	  let button=document.createElement("button");
+	  form.appendChild(button);
+	  button.setAttribute("class", "button");
+	  button.innerHTML="Login";
+	  button.setAttribute("value", "submit");
+	  button.setAttribute("type", "submit");
 	 
+	 // function
 	 
-	 
-	 
-	 
+	 function validation(details){
+	    var username=document.getElementById("in1").value;
+	    var password=document.getElementById("in2").value;
+		
+		if(username=="" && password==""){
+		   alert("please give all data")
+		}
+	 }
 	 
 	 
    
