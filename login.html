@@ -8,6 +8,19 @@
 	<link rel="stylesheet" href="login.css">
 </head>
 <body>
+
+
+  <!-- <div class="main"> -->
+     <!-- <div class="form" onsubmit="return(validation())" action="mainPage.html"> -->
+	    <!-- <h1>form login</h1> -->
+		<!-- <input type="text" placeholder="enter your name"/> -->
+		<!-- <input type="password" placeholder="enter password"/> -->
+		<!-- <button type="submit" value="submit"> button</button> -->
+	 <!-- </div> -->
+  <!-- </div> -->
+
+
+
    <script>
    
       <!-- var details=[ -->
@@ -75,8 +88,18 @@
 		   document.form1.in1.focus();
 		   return false;
 		}
-		else if(password < 6){
+		else if(!isNaN(username)){
+		   alert("enter name alphabets only");
+		   document.form1.in1.focus();
+		   return false;
+		}
+		else if(password==""){
 		   alert("please fill all data");
+		   document.form1.in2.focus();
+		   return false;
+		}
+		else if(password.length < 6){
+		   alert("please password atleast 6 character");
 		   document.form1.in2.focus();
 		   return false;
 		}
